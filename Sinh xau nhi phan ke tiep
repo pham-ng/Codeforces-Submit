@@ -1,0 +1,34 @@
+/******************************************************************************
+
+                              Online C++ Debugger.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Debug" button to debug it.
+
+*******************************************************************************/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+string sinhXauNhiPhan(string &s){
+    int i=s.length()-1;
+    while(i>=0&&s[i]=='1'){
+        s[i]='0';
+        --i;
+    }
+    if(i>=0){
+        s[i]='1';
+    }
+    return s;
+    
+}
+
+int main(){
+    string s;
+    getline(cin,s);
+    sinhXauNhiPhan(s);
+    for(int i=0;i<s.length();i++){
+        cout<<s[i];
+    }
+    return 0;
+    
+}
