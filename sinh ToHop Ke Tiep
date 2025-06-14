@@ -1,0 +1,45 @@
+/******************************************************************************
+
+                              Online C++ Debugger.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Debug" button to debug it.
+
+*******************************************************************************/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> sinhToHopKeTiep(vector<int> a,int n,int k){
+    int i=a.size()-1;
+    while(i>=0&&a[i]>n-k+i){
+        --i;
+    }
+    if(i<0) {
+        
+        for(int j=0;j<k;j++){
+            a[j]=j+1;
+        }
+    }
+    else{
+        a[i]++;
+        for(int j=i+1;j<k;j++){
+            a[j]=a[j-1]+1;
+        }
+    }
+    return a;
+}
+
+int main(){
+    int n,k;
+    cin>>n>>k;
+    vector<int>a(k);
+    for(int i=0;i<k;i++){
+        cin>>a[i];
+    }
+    a=sinhToHopKeTiep(a,n,k);
+    for(int i=0;i<k;i++){
+        cout<<a[i];
+    }
+    return 0;
+    
+}
