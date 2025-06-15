@@ -1,0 +1,55 @@
+/******************************************************************************
+
+                              Online C++ Debugger.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Debug" button to debug it.
+
+*******************************************************************************/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void phanTichSoDuoiDangTong(int n){
+    vector<int>a(n);
+    int cnt =0;
+    a[0]=n;
+    bool hashNext=true;
+    for(int i = 0; i <= cnt; i++) cout << a[i] << (i < cnt ? " " : "\n");
+    while(hashNext){
+        int i = cnt;
+        while(i>=0 &&a[i]==1){
+        --i;
+    }
+    if(i<0) hashNext=false;
+    else{
+        a[i]--;
+        int d=cnt-i+1;
+        cnt=i;
+        
+        int q=d/a[i];
+        int r=d%a[i];
+        if(q) {
+            for(int j=0;j<q;j++){
+                ++cnt;
+                a[cnt]=a[i];
+            }
+        }
+        if(r){
+            ++cnt;
+            a[cnt]=r;
+        }
+        for(int i = 0; i <= cnt; i++) cout << a[i] << (i < cnt ? " " : "\n");
+        
+        
+    }
+    }
+    
+    
+}
+
+int main(){
+    int n;
+    cin >> n;
+    phanTichSoDuoiDangTong(n);
+    return 0;
+}
