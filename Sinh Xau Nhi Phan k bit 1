@@ -1,0 +1,53 @@
+/******************************************************************************
+
+                              Online C++ Debugger.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Debug" button to debug it.
+
+*******************************************************************************/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void xauNhiPhankBit(int n,int k){
+    
+    string s(n,'0');
+    
+    while(true){
+    int i=n-1;
+    if(count(s.begin(),s.end(),'1')==k){
+        cout<<s<<endl;
+    }
+   
+    
+/*  int count=0;
+    for(int j=0;j<n;j++){
+        if(s[j]=='1'){
+            count++;
+        }
+    }
+    if(count==k){
+        cout<<s<<endl;
+    }
+    
+*/    
+    
+        
+    while(i>=0 && s[i]=='1'){
+        s[i]='0';
+        --i;
+    }
+    if(i<0) break;
+    else{
+        s[i]='1';
+    }
+}
+    
+}
+
+int main(){
+    int n,k;
+    cin >> n>>k ;
+    xauNhiPhankBit(n,k);
+    return 0;
+}
