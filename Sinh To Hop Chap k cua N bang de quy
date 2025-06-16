@@ -19,7 +19,7 @@ void toHopChap(vector<int>&a,int n,int k,int i){
             cout<<endl;
         }
         else{
-            chinhHopChap(a,n,k,i+1);
+            toHopChap(a,n,k,i+1);
         }
     }
 }
