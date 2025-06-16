@@ -1,0 +1,33 @@
+/******************************************************************************
+
+                              Online C++ Debugger.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Debug" button to debug it.
+
+*******************************************************************************/
+#include<bits/stdc++.h>
+using namespace std;
+
+void xauNhiPhan(vector<int>& a,int n,int i){
+    for(int j=0;j<=1;j++){
+        a[i]=j;
+    if(i==n-1){
+        for(int j=0;j<n;j++){
+            cout<<a[j];
+        }
+        cout<<endl;
+    }
+    else{
+        xauNhiPhan(a,n,i+1);
+    }
+    }
+   
+}
+
+int main(){
+    int n;
+    cin>>n;
+    vector<int>a(n);
+    xauNhiPhan(a,n,0);
+    return 0;
+}
