@@ -1,0 +1,36 @@
+/******************************************************************************
+
+                              Online C++ Debugger.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Debug" button to debug it.
+
+*******************************************************************************/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+long long tinhTong(int n){
+    if(n==0) return 0;
+    else{
+        return tinhTong(n-1)+n;
+    }
+}
+long long fibonanci(int n){
+    if(n==0) return 0;
+    if(n==1) return 1;
+    return fibonanci(n-1)+fibonanci(n-2);
+}
+
+
+int main(){
+    int n;
+    cin>>n;
+    long long result=tinhTong(n);
+    cout<<"1+2+3+...+"<<n <<"="<<result<<endl;
+    
+    result=fibonanci(n);
+    cout<<"So fibonanci thu "<<n<<" la : "<<result;
+    
+    
+    return 0;
+}
